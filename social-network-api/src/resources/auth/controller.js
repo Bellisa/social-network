@@ -1,14 +1,14 @@
 import AuthService from "./service";
 import BaseResponse from "../../middleware/base-response";
-import BasicAuthMiddleware from "../../middleware/basic-auth";
+import authMiddleware from "../../middleware/auth";
 
 export default class AuthController extends BaseResponse {
   login = async (req, res) => {
+    
     const { login, password } = req.body;
-
     try {
       const user = await AuthService.login(login, password);
-      const token = await BasicAuthMiddleware.generateToken(
+      const token = await authMiddleware.generateToken(
         user.login,
         password
       );

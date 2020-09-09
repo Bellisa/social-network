@@ -4,7 +4,7 @@ export default class AuthService {
   static async login(login, password) {
     try {
       const user = await UserModel.findOne({
-        where: { login: login },
+        where: { login, password },
         attributes: ["id", "avatar", "first_name", "last_name", "login"]
       });
       return user;

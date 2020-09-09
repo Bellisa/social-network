@@ -1,16 +1,15 @@
-import BaseResponse from "./base-response";
-import btoa from "btoa";
-import atob from "atob";
 import ValidationError from "../response-errors/validation-error";
 import AuthService from "../resources/auth/service";
+import jwt from 'jsonwebtoken';
+const JWT_KEY = process.env.JWT_KEY;
 
-export default class BasicAuthMiddleware {
+export default class JWTAuthMiddleware {
   check = async (req, res, next) => {
     const token = await this.getToken(req);
     try {
       let user = await this.decode(token);
       if (user && user.hasOwnProperty('login') && user.hasOwnProperty('password')) {
-        let result = await AuthService.verify(user['login'], user['password']);
+          let result = await AuthService.verify(user['login'], user['password']);
         if (!result)
         throw new ValidationError(500, '', 'user not found 1');
        return true;
@@ -23,15 +22,14 @@ export default class BasicAuthMiddleware {
     }
   };
   getToken = async ({ headers: { authorization } }) => {
-    return authorization && authorization.replace("Basic ", "");
+    return authorization && authorization.replace("Bearer ", "");
   };
 
   decode = async token => {
-    const info = (atob(token)).split(":");
-    return ({login:info[0], password: info[1]})
+    return jwt.decode(token);
   };
-
+    
   generateToken = async (login, password) => {
-    return btoa(`${login}:${password}`);
+      return jwt.sign({ login, password }, JWT_KEY);
   }
 }

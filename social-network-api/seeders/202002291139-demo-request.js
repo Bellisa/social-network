@@ -6,23 +6,17 @@ module.exports = {
       {
         user_id: 5,
         friend_id: 7,
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       },
       {
         user_id: 7,
         friend_id: 8,
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       },
       {
         user_id: 7,
         friend_id: 2,
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       }
     ]),
 

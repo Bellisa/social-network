@@ -6,9 +6,7 @@ module.exports = {
       {
         user_id: 7,
         friend_id: 1,
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       }
     ]),
 

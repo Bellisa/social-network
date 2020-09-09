@@ -9,9 +9,7 @@ module.exports = {
         login: "john@gmail.com",
         password: "123123",
         avatar: '1.png',
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       },
       {
         first_name: "J",
@@ -19,9 +17,7 @@ module.exports = {
         login: "j@gmail.com",
         password: "123123",
         avatar: '2.png',
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       },
       {
         first_name: "Johnny",
@@ -29,9 +25,7 @@ module.exports = {
         login: "johnny@gmail.com",
         password: "123123",
         avatar: '3.png',
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       },
       {
         first_name: "Johann",
@@ -39,9 +33,7 @@ module.exports = {
         login: "johann@gmail.com",
         password: "123123",
         avatar: '4.png',
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       },
       {
         first_name: "James",
@@ -49,9 +41,7 @@ module.exports = {
         login: "james@gmail.com",
         password: "123123",
         avatar: '5.png',
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       },
       {
         first_name: "Jira",
@@ -59,9 +49,7 @@ module.exports = {
         login: "jira@gmail.com",
         password: "123123",
         avatar: '6.png',
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       },
       {
         first_name: "Jerry",
@@ -69,9 +57,7 @@ module.exports = {
         login: "jerry@gmail.com",
         password: "123123",
         avatar: '7.png',
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       },
       {
         first_name: "Jane",
@@ -79,9 +65,7 @@ module.exports = {
         login: "Jane@gmail.com",
         password: "123123",
         avatar: '8.png',
-        created_at: new Date(),
-        updated_at: new Date(),
-        deleted_at: null
+        created_at: new Date()
       }
     ]),
   down: queryInterface => queryInterface.bulkDelete("user", null, {})

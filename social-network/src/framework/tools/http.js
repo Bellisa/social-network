@@ -1,6 +1,7 @@
 
 import { ENV } from "../../const/const"
 const API_URL = ENV.API_URL;
+const AUTHORIZATIOM = ENV.AUTHORIZATIOM;
 class Http {
 
     constructor() { }
@@ -66,7 +67,7 @@ const getOptions = (isSecurity) => {
         }
     }
     if (!!token) {
-        Object.assign(options.headers, { 'Authorization': 'Basic ' + token });
+        Object.assign(options.headers, { 'Authorization': AUTHORIZATIOM + token });
     }
     return options;
 }
